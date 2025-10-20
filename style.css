@@ -1,0 +1,322 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+p {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.25;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+button,
+input,
+label {
+  line-height: 1.25;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* FONTS */
+
+/* libre-franklin-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/libre-franklin-v20-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* libre-franklin-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/libre-franklin-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* libre-franklin-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Libre Franklin";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/libre-franklin-v20-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* libre-franklin-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/libre-franklin-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* libre-franklin-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/libre-franklin-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CSS VARIABLES */
+
+:root {
+
+    /* COLORS */
+
+    --clr-white: hsl(0, 100%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-blue-950: hsl(209, 33%, 12%);
+    --clr-blue-500: hsl(223, 87%, 63%);
+    --clr-blue-200: hsl(223, 100%, 88%);
+    --clr-gray-400: hsl(0, 0%, 59%);
+    --clr-gray-100: hsl(0, 0%, 92%);
+    --clr-gray-50: hsl(225, 100%, 99%);
+    --clr-red-400: hsl(354, 100%, 66%);
+    --clr-green-500: hsl(145, 63%, 49%);
+
+    /* TYPOGRAPHY */
+
+    --ff-main: "Libre Franklin", sans-serif;
+    --fs-body: clamp(0.75rem, 0.5115rem + 1.0178vw, 1rem);
+    --fw-body: 300;
+
+    /* SPACINGS */
+
+    --space-0: 0rem;
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-600: 3rem;
+
+    /* BORDER RADUIS */
+    --rounded-lg: 28px;
+
+}
+
+body {
+  font-family: var(--ff-main);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  background-color: var(--clr-white);
+  color: var(--clr-blue-950);
+  padding-inline: 1.75rem;
+  padding-block: 5.313rem;
+  text-align: center;
+}
+
+.header__link {
+  outline-color: var(--clr-blue-950);
+}
+
+.header__logo {
+  width: clamp(3.3488rem, 1.4314rem + 8.1807vw, 5.3581rem);
+  height: clamp(0.9525rem, 0.4074rem + 2.3257vw, 1.5238rem);
+  margin-inline: auto;
+  margin-block-end: clamp(var(--space-500), 2.0229rem + 2.0356vw, var(--space-600));
+}
+
+.main {
+  max-inline-size: 44.5rem;
+  margin-inline: auto;
+  padding-inline: clamp(0rem, -2.2364rem + 9.542vw, 2.3438rem);
+}
+
+.main__title {
+  font-size: clamp(1.25rem, -0.4198rem + 7.1247vw, 3rem);
+  font-weight: 300;
+  color: var(--clr-gray-400);
+  margin-block-end: clamp(0.5rem, 0.0229rem + 2.0356vw, 1rem);
+}
+
+.main__title-bold {
+  font-weight: 700;
+  color: var(--clr-blue-950);
+}
+
+.main__description {
+  font-size: clamp(0.75rem, 0.2729rem + 2.0356vw, 1.25rem);
+  color: var(--clr-blue-950);
+  margin-block-end: var(--space-500);
+}
+
+.form {
+  display: grid;
+  align-items: start;
+  gap: clamp(0.5rem, 0.0229rem + 2.0356vw, 1rem);
+  margin-block-end: clamp(4.5625rem, 3.1908rem + 5.8524vw, 6rem);
+}
+
+.form--error {
+  margin-block-end: clamp(2.1875rem, -0.0787rem + 9.6692vw, 4.5625rem);
+}
+
+.form__email {
+  border: 1px solid var(--clr-blue-200);
+  border-radius: var(--rounded-lg);
+  padding-inline: clamp(1.5rem, 1.0229rem + 2.0356vw, 2rem);
+  padding-block: clamp(0.7813rem, 0.4532rem + 1.3995vw, 1.125rem);
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.01%);
+  width: 100%;
+  outline-color: var(--clr-blue-500);
+}
+
+.form__email--error {
+  border-color: var(--clr-red-400);
+}
+
+.form__error {
+  font-size: clamp(0.625rem, 0.5057rem + 0.5089vw, 0.75rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--clr-red-400);
+  display: none;
+  visibility: hidden;
+  padding-inline: clamp(1.5rem, 1.0229rem + 2.0356vw, 2rem);
+  margin-block-start: var(--space-100);
+  margin-block-end: var(--space-300);
+}
+
+.form__error--visible {
+  display: block;
+  visibility: visible;
+}
+
+.form__email::placeholder {
+  color: var(--clr-blue-200);
+}
+
+.form__submit {
+  font-weight: 600;
+  color: var(--clr-white);
+  background-color: var(--clr-blue-500);
+  border: var(--clr-blue-500);
+  border-radius: var(--rounded-lg);
+  padding-block: clamp(0.7813rem, 0.4532rem + 1.3995vw, 1.125rem);
+  cursor: pointer;
+  transition: opacity 200ms;
+}
+
+.form__submit:focus-visible {
+    outline: 2px solid var(--clr-blue-500);
+    outline-offset: 2px;
+}
+
+.form__submit:hover {
+  opacity: 75%;
+}
+
+.main__illustration {
+  height: auto;
+  margin-block-end: clamp(4.5rem, 10.3626rem + -12.2137vw, 7.5rem);
+}
+
+.social__list {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-200);
+}
+
+.social {
+  margin-block-end: var(--space-300);
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--clr-blue-200);
+  border-radius: 100%;
+  text-decoration: none;
+  width: 31.22px;
+  height: 31px;
+  transition: background-color 200ms, border-color 200ms;
+  outline-color: var(--clr-blue-500);
+}
+
+.social__link:hover {
+  border-color: var(--clr-blue-500);
+  background-color: var(--clr-blue-500);
+}
+
+.social__icon {
+  color: var(--clr-blue-500);
+  transition: 200ms;
+}
+
+.social__link:hover .social__icon {
+  color: var(--clr-white);
+}
+
+.footer__copyright {
+  font-size: 0.75rem;
+  color: var(--clr-gray-400);
+}
+
+@media screen and (min-width: 48em) {
+  .form {
+    grid-template-columns: 2.1fr 1fr;
+  }
+
+  .form__error {
+    text-align: start;
+    margin-block-end: unset;
+  }
+}
