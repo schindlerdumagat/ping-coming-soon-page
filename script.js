@@ -1,6 +1,5 @@
 const form = document.querySelector(".form");
 const emailFeedback = document.querySelector(".form__feedback");
-const submitButton = document.querySelector(".form__submit");
 
 const validEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
