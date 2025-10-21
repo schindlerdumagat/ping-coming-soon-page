@@ -204,10 +204,6 @@ body {
   margin-block-end: clamp(4.5625rem, 3.1908rem + 5.8524vw, 6rem);
 }
 
-.form--error {
-  margin-block-end: clamp(2.1875rem, -0.0787rem + 9.6692vw, 4.5625rem);
-}
-
 .form__email {
   border: 1px solid var(--clr-blue-200);
   border-radius: var(--rounded-lg);
@@ -218,25 +214,28 @@ body {
   outline-color: var(--clr-blue-500);
 }
 
-.form__email--error {
-  border-color: var(--clr-red-400);
-}
-
 .form__error {
   font-size: clamp(0.625rem, 0.5057rem + 0.5089vw, 0.75rem);
   font-style: italic;
   font-weight: 400;
   color: var(--clr-red-400);
   display: none;
-  visibility: hidden;
   padding-inline: clamp(1.5rem, 1.0229rem + 2.0356vw, 2rem);
   margin-block-start: var(--space-100);
   margin-block-end: var(--space-300);
 }
 
-.form__error--visible {
+.form--error {
+  margin-block-end: clamp(2.1875rem, -0.0787rem + 9.6692vw, 4.5625rem);
+  gap: unset;
+}
+
+.form--error .form__email {
+  border-color: var(--clr-red-400);
+}
+
+.form--error .form__error {
   display: block;
-  visibility: visible;
 }
 
 .form__email::placeholder {
@@ -313,6 +312,7 @@ body {
 @media screen and (min-width: 48em) {
   .form {
     grid-template-columns: 2.1fr 1fr;
+    gap: 1rem;
   }
 
   .form__error {
