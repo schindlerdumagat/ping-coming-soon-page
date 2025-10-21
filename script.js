@@ -33,7 +33,7 @@ function validateEmail(email) {
 
     let emailError = "";
 
-    if (email.length === 0) {
+    if (!email || email.length === 0) {
         emailError = "Whoops! It looks like you forgot to add your email";
     } else if (!validEmailRegex.test(email)) {
         emailError = "Please provide a valid email address";
