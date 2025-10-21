@@ -1,5 +1,4 @@
 const form = document.querySelector(".form");
-const emailInput = document.querySelector(".form__email");
 const emailFeedback = document.querySelector(".form__feedback");
 const submitButton = document.querySelector(".form__submit");
 
